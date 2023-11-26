@@ -1,8 +1,11 @@
 from functools import lru_cache
 from typing import Union
 from os import getenv
+from dotenv import load_dotenv
 from pydantic_settings import BaseSettings
 from pydantic import PostgresDsn, AnyUrl, EmailStr
+
+load_dotenv()
 
 
 class Settings(BaseSettings):
@@ -46,7 +49,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30)
 
     # DB Config
-    DB_URI: Union[PostgresDsn, AnyUrl] = getenv("DB_URI", "sqlite:///./app.db")
+    DB_URI: Union[PostgresDsn, AnyUrl] = getenv("DB_URI", "sqlite:///app.db")
     # email config
     SMTP_SERVER: str = getenv("SMTP_SERVER", "smtp.gmail.com")
     SMTP_PORT: int = getenv("SMTP_PORT", 587)
