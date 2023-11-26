@@ -1,0 +1,23 @@
+# env.template
+
+# This is a template for your .env file
+# Copy this file and rename it to `.env`, then fill in the actual values
+
+# app config
+DEBUG=True
+APP_VERSION=0.1.0
+APP_NAME="FastAPI"
+APP_DESCRIPTION="Describe the Application." 
+
+# Use this command to generate a SECRET_KEY: $ openssl rand -hex 32
+SECRET_KEY="307003c8564ce849a858b6e9f8b0b2806744e9a06d040bbf1a945d5cf88a2aed"
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+# DB Config
+DB_URI= "postgresql://user:password@0.0.0.0:5432/app_db"
+
+# email config
+SMTP_SERVER=smtp.example.com
+SMTP_PORT=587
+SMTP_USERNAME=your_email@example.com
+SMTP_PASSWORD=your_email_password
